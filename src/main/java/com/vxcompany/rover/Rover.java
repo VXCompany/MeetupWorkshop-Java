@@ -62,7 +62,6 @@ public class Rover {
                 break;
             case TURN_LEFT:
                 orientation = orientation.counterClockwise();
-                // break; Bug 1: forgot break statement
             case TURN_RIGHT:
                 orientation = orientation.clockwise();
                 break;
@@ -81,7 +80,7 @@ public class Rover {
 
         int memoryLimit = 10;
         if (input.size() > memoryLimit) {
-            throw new OutOfMemoryError(); // bug 3: out of memory error with more than 10 commands
+            throw new OutOfMemoryError();
         }
 
         return commands;
@@ -92,8 +91,7 @@ public class Rover {
             return 0;
 
         }
-        // return input.size();
-        return Math.min(input.size(), 3); // bug 2: only three of given commands are executed
+        return Math.min(input.size(), 3);
     }
 
     public Position getPosition() {

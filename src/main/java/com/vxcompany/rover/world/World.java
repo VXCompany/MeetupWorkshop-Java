@@ -73,15 +73,13 @@ public class World {
         if (newPosition.getX() >= width) {
             newPosition.setX(0);
         } else if (newPosition.getX() == -1) {
-            // newPosition.setX(width - 1);
-            newPosition.setX(width); // bug 4: width is out of range
+            newPosition.setX(width);
         }
 
         if (newPosition.getY() >= height) {
             newPosition.setY(0);
         } else if (newPosition.getY() == -1) {
-            // newPosition.setY(height - 1);
-            newPosition.setY(height); // bug 4: height is out of range
+            newPosition.setY(height);
         }
     }
 }
