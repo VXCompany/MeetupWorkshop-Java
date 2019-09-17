@@ -16,13 +16,13 @@ public class RoverTest {
     public void example() {
         // Given
         List<Command> commands = Arrays.asList(MOVE_FORWARD, MOVE_FORWARD, MOVE_FORWARD);
-        Rover testRover = new Rover(new MarsGenerator(), new Position(0, 0), Direction.NORTH);
+        Rover testRover = new Rover(new MarsGenerator(), new Position(1, 1), Direction.NORTH);
 
         // When
         testRover.execute(commands);
 
         // Then
-        assertEquals(new Position(0, 3), testRover.getPosition());
+        assertEquals(new Position(1, 4), testRover.getPosition());
         assertEquals(Direction.NORTH, testRover.getOrientation());
     }
 }

@@ -13,7 +13,7 @@ public class MarsGenerator implements IWorldGenerator {
         var width = 4;
         var height = 4;
 
-        List<Position> obstacles = Arrays.asList(new Position(1, 2), new Position(3, 1));
+        List<Position> obstacles = Arrays.asList(new Position(2, 3), new Position(4, 2));
         System.out.println("Generating Mars: a " + width + "x" + height + " world with obstacles " + obstacles);
 
         World mars = new World(width, height);

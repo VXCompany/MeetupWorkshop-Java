@@ -54,7 +54,7 @@ public class World {
             throw new IllegalStateException("There is an obstacle here!");
         }
 
-        if (position.getX() < 0 || position.getX() >= width || position.getY() < 0 || position.getY() >= height) {
+        if (position.getX() < 1 || position.getX() > width || position.getY() < 1 || position.getY() > height) {
             throw new IllegalStateException("Position " + position + " is outside this world's grid");
         }
     }
@@ -75,15 +75,15 @@ public class World {
     }
 
     private void wrapPosition(Position newPosition) {
-        if (newPosition.getX() >= width) {
-            newPosition.setX(0);
-        } else if (newPosition.getX() == -1) {
+        if (newPosition.getX() > width + 1) {
+            newPosition.setX(1);
+        } else if (newPosition.getX() == 0) {
             newPosition.setX(width);
         }
 
-        if (newPosition.getY() >= height) {
-            newPosition.setY(0);
-        } else if (newPosition.getY() == -1) {
+        if (newPosition.getY() > height + 1) {
+            newPosition.setY(1);
+        } else if (newPosition.getY() == 0) {
             newPosition.setY(height);
         }
     }
