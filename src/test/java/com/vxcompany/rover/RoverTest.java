@@ -1,8 +1,8 @@
 package com.vxcompany.rover;
 
 import com.vxcompany.rover.world.Direction;
+import com.vxcompany.rover.world.MarsGenerator;
 import com.vxcompany.rover.world.Position;
-import com.vxcompany.rover.world.RandomWorldGenerator;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -16,7 +16,7 @@ public class RoverTest {
     public void example() {
         // Given
         List<Command> commands = Arrays.asList(MOVE_FORWARD, MOVE_FORWARD, MOVE_FORWARD);
-        Rover testRover = new Rover(new RandomWorldGenerator(), new Position(0, 0), Direction.NORTH);
+        Rover testRover = new Rover(new MarsGenerator(), new Position(0, 0), Direction.NORTH);
 
         // When
         testRover.execute(commands);

@@ -1,5 +1,6 @@
 package com.vxcompany.rover.world;
 
+import java.util.Collection;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -27,6 +28,10 @@ public class World {
 
     void addObstacle(Position position) {
         obstacles.add(position);
+    }
+
+    void addObstacles(Collection<Position> positions) {
+        obstacles.addAll(positions);
     }
 
     public Position move(Position start, Direction direction) {
