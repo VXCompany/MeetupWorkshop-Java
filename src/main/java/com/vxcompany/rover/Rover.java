@@ -39,7 +39,7 @@ public class Rover {
     private Direction orientation = Direction.NORTH;
 
     public Rover(IWorldGenerator generator, Position initialPosition, Direction initialOrientation) {
-        this.world = generator.generate(5, 5);
+        this.world = generator.generate();
         this.position = initialPosition;
 
         System.out.println("Rover entered the world at position " + initialPosition + " facing " + initialOrientation);
