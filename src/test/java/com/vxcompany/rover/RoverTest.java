@@ -8,14 +8,13 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.List;
 
-import static com.vxcompany.rover.Command.MOVE_FORWARD;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RoverTest {
     @Test
     public void example() {
         // Given
-        List<Command> commands = Arrays.asList(MOVE_FORWARD, MOVE_FORWARD, MOVE_FORWARD);
+        List<Character> commands = Arrays.asList('f', 'f', 'f');
         Rover testRover = new Rover(new MarsGenerator(), new Position(1, 1), Direction.NORTH);
 
         // When

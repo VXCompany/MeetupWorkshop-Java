@@ -22,8 +22,8 @@ public class Rover {
         System.out.println("Rover entered the world at position " + initialPosition + " facing " + initialOrientation);
     }
 
-    public void execute(List<Command> commands) {
-        List<Command> validatedCommands = validateCommands(commands);
+    public void execute(List<Character> commands) {
+        List<Command> validatedCommands = determineCommands(commands);
         for (Command command : validatedCommands) {
             executeCommand(command);
         }
@@ -48,11 +48,11 @@ public class Rover {
         System.out.println("Executed " + command + ": rover is at " + position + " facing " + orientation);
     }
 
-    private List<Command> validateCommands(List<Command> input) {
+    private List<Command> determineCommands(List<Character> input) {
         List<Command> commands = new ArrayList<>();
 
         for (int i = 0; i < determineNumberOfElements(input); i++) {
-            commands.add(input.get(i));
+            commands.add(Command.valueOf(input.get(i)));
         }
 
         int memoryLimit = 10;
@@ -63,7 +63,7 @@ public class Rover {
         return commands;
     }
 
-    private int determineNumberOfElements(List<Command> input) {
+    private int determineNumberOfElements(List<Character> input) {
         if (input == null) {
             return 0;
 
